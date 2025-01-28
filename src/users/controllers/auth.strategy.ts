@@ -37,7 +37,7 @@ export class AuthStrategy extends PassportStrategy(Strategy, 'jwt') {
     const { _id } = payload;
     // let _id = 60;
     const prevUserRes = await this.conn.query(
-      `Select * from "users"  where id = '${_id}';`,
+      `Select * from users  where id = '${_id}';`,
     );
 
     let prevUser = prevUserRes[0];
